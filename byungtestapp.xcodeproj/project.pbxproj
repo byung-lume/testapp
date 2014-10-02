@@ -14,6 +14,9 @@
 		6851FA0C19DD8CBE00C5A343 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6851FA0B19DD8CBE00C5A343 /* Images.xcassets */; };
 		6851FA0F19DD8CBE00C5A343 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6851FA0D19DD8CBE00C5A343 /* LaunchScreen.xib */; };
 		6851FA1B19DD8CBE00C5A343 /* byungtestappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851FA1A19DD8CBE00C5A343 /* byungtestappTests.m */; };
+		6851FA6E19DDA92A00C5A343 /* FakePeopleDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851FA6919DDA92A00C5A343 /* FakePeopleDatabase.m */; };
+		6851FA6F19DDA92A00C5A343 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851FA6B19DDA92A00C5A343 /* Person.m */; };
+		6851FA7019DDA92A00C5A343 /* PersonQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6851FA6D19DDA92A00C5A343 /* PersonQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		6851FA1419DD8CBE00C5A343 /* byungtestappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = byungtestappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6851FA1919DD8CBE00C5A343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6851FA1A19DD8CBE00C5A343 /* byungtestappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = byungtestappTests.m; path = byungtestappTests/byungtestappTests.m; sourceTree = SOURCE_ROOT; };
+		6851FA6819DDA92A00C5A343 /* FakePeopleDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakePeopleDatabase.h; sourceTree = "<group>"; };
+		6851FA6919DDA92A00C5A343 /* FakePeopleDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakePeopleDatabase.m; sourceTree = "<group>"; };
+		6851FA6A19DDA92A00C5A343 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6851FA6B19DDA92A00C5A343 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		6851FA6C19DDA92A00C5A343 /* PersonQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonQuery.h; sourceTree = "<group>"; };
+		6851FA6D19DDA92A00C5A343 /* PersonQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,12 @@
 		6851F9FD19DD8CBE00C5A343 /* byungtestapp */ = {
 			isa = PBXGroup;
 			children = (
+				6851FA6819DDA92A00C5A343 /* FakePeopleDatabase.h */,
+				6851FA6919DDA92A00C5A343 /* FakePeopleDatabase.m */,
+				6851FA6A19DDA92A00C5A343 /* Person.h */,
+				6851FA6B19DDA92A00C5A343 /* Person.m */,
+				6851FA6C19DDA92A00C5A343 /* PersonQuery.h */,
+				6851FA6D19DDA92A00C5A343 /* PersonQuery.m */,
 				6851FA0219DD8CBE00C5A343 /* AppDelegate.h */,
 				6851FA0319DD8CBE00C5A343 /* AppDelegate.m */,
 				6851FA0519DD8CBE00C5A343 /* ViewController.h */,
@@ -219,7 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6851FA6E19DDA92A00C5A343 /* FakePeopleDatabase.m in Sources */,
 				6851FA0719DD8CBE00C5A343 /* ViewController.m in Sources */,
+				6851FA6F19DDA92A00C5A343 /* Person.m in Sources */,
+				6851FA7019DDA92A00C5A343 /* PersonQuery.m in Sources */,
 				6851FA0419DD8CBE00C5A343 /* AppDelegate.m in Sources */,
 				6851FA0119DD8CBE00C5A343 /* main.m in Sources */,
 			);
@@ -412,6 +430,7 @@
 				6851FA2019DD8CBE00C5A343 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6851FA2119DD8CBE00C5A343 /* Build configuration list for PBXNativeTarget "byungtestappTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +439,7 @@
 				6851FA2319DD8CBE00C5A343 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

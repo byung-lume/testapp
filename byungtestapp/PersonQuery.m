@@ -17,7 +17,6 @@
     }
     FakePeopleDatabase *database = [[FakePeopleDatabase alloc] init];
     NSArray *listOfPeople =[database findAllUsersInDataBase];
-    
     block(listOfPeople);
 }
 @end
