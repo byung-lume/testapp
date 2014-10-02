@@ -13,7 +13,8 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *screen1Label;
 @property (weak, nonatomic) IBOutlet UIButton *toScreen2Button;
-
+@property (weak, nonatomic) IBOutlet UITableView *personTable;
+@property (weak, nonatomic) IBOutlet UIButton *toScreen1Button;
 
 @end
 
@@ -24,19 +25,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.screen1Label.text = @"Screen 1";
     [self.toScreen2Button setTitle:@"To Screen 2" forState: UIControlStateNormal];
-    
-    PersonQuery *query = [[PersonQuery alloc] init];
-
-    __block Person *p = nil;
-    
-    [query getAllUsers:^void(NSArray *array) {
-        p = [array objectAtIndex:0];
-    }];
-    
-    NSMutableString *str = [[NSMutableString alloc] init];
-    [str appendString:p.firstName];
-    [str appendString:@" "];
-    [str appendString:p.lastName];
+    [self.toScreen1Button setTitle:@"To Screen 1" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,18 +33,22 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)copyThis:(Person *)person1 toThisPerson:(Person *)person2
-{
-    person2.firstName = person1.firstName;
-    person2.lastName = person1.lastName;
-    person2.favoriteColor = person1.favoriteColor;
-    person2.secondFavoriteColor = person1.secondFavoriteColor;
-    person2.personalBio = person1.personalBio;
+-(IBAction)unWind:(UIStoryboardSegue *)segue {
+    
 }
 
--(IBAction)unWind:(UIStoryboardSegue *)segue
-{
-    //segue.sourceViewController;
+-(IBAction)populateTable:(id)sender {
+    PersonQuery *query = [[PersonQuery alloc] init];
+    [self.personTable beginUpdates];
+    __block NSArray *array = nil;
+    [query getAllUsers:^void(NSArray *array1) {
+        array = array1;
+    }];
+    NSArray *paths = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:[array count]-1 inSection:1]];
+    [[self personTable] insertRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationTop];
+    [self.personTable insertRowsAtIndexPaths:array  withRowAnimation:UITableViewRowAnimationTop];
+    [self.personTable endUpdates];
+    NSLog(@"Table Populated!");
 }
 
 @end

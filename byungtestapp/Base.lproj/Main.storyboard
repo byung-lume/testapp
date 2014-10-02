@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +30,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qvu-kL-sl9" kind="show" id="cLV-fn-BVY"/>
+                                    <action selector="populateTable:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XGk-pJ-4qz"/>
+                                    <segue destination="Qvu-kL-sl9" kind="show" id="k96-TD-fOG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,12 +50,12 @@
                                 <exclude reference="Yrp-Hz-NyL"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="rOe-To-YaE"/>
                                 <exclude reference="2Sh-na-VTY"/>
                                 <exclude reference="ck0-yK-Cwh"/>
                                 <exclude reference="en0-ml-ahS"/>
                                 <exclude reference="iZH-Gu-111"/>
                                 <exclude reference="Rmy-xO-BdO"/>
-                                <exclude reference="rOe-To-YaE"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -62,12 +64,12 @@
                                 <include reference="Yrp-Hz-NyL"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="rOe-To-YaE"/>
                                 <include reference="2Sh-na-VTY"/>
                                 <include reference="ck0-yK-Cwh"/>
                                 <include reference="en0-ml-ahS"/>
                                 <include reference="iZH-Gu-111"/>
                                 <include reference="Rmy-xO-BdO"/>
-                                <include reference="rOe-To-YaE"/>
                             </mask>
                         </variation>
                     </view>
@@ -78,35 +80,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="513"/>
+            <point key="canvasLocation" x="-214.5" y="515"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GfX-ub-bcQ">
             <objects>
-                <viewController storyboardIdentifier="screen2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qvu-kL-sl9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="screen2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qvu-kL-sl9" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4VB-7b-gPk"/>
                         <viewControllerLayoutGuide type="bottom" id="Wjf-e6-ZYx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lSD-MJ-NiI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-jB-xU7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVF-GD-Gzr">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="172" y="562" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="Qra-1a-u1g" kind="unwind" unwindAction="unWind:" id="ct6-a6-Yyo"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-jB-xU7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Wjf-e6-ZYx" firstAttribute="top" secondItem="jVF-GD-Gzr" secondAttribute="bottom" constant="16" id="B8a-BP-emA"/>
                             <constraint firstItem="jVF-GD-Gzr" firstAttribute="top" secondItem="GUN-jB-xU7" secondAttribute="bottom" constant="28" id="I2m-nj-ex3"/>
                             <constraint firstAttribute="centerX" secondItem="GUN-jB-xU7" secondAttribute="centerX" id="PWX-Sg-Uxc"/>
+                            <constraint firstItem="Wjf-e6-ZYx" firstAttribute="top" secondItem="jVF-GD-Gzr" secondAttribute="bottom" constant="16" id="Uj1-15-eQd"/>
                             <constraint firstAttribute="centerX" secondItem="jVF-GD-Gzr" secondAttribute="centerX" id="aM2-eb-VvS"/>
                             <constraint firstItem="GUN-jB-xU7" firstAttribute="top" secondItem="4VB-7b-gPk" secondAttribute="bottom" constant="16" id="bZQ-jE-Hxx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GUN-jB-xU7" secondAttribute="trailing" id="rX2-2o-ecc"/>
@@ -114,8 +123,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="jVF-GD-Gzr"/>
                                 <exclude reference="GUN-jB-xU7"/>
+                                <exclude reference="jVF-GD-Gzr"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="PWX-Sg-Uxc"/>
@@ -124,13 +133,13 @@
                                 <exclude reference="vPZ-E0-jiz"/>
                                 <exclude reference="I2m-nj-ex3"/>
                                 <exclude reference="aM2-eb-VvS"/>
-                                <exclude reference="B8a-BP-emA"/>
+                                <exclude reference="Uj1-15-eQd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="jVF-GD-Gzr"/>
                                 <include reference="GUN-jB-xU7"/>
+                                <include reference="jVF-GD-Gzr"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="PWX-Sg-Uxc"/>
@@ -139,12 +148,17 @@
                                 <include reference="vPZ-E0-jiz"/>
                                 <include reference="I2m-nj-ex3"/>
                                 <include reference="aM2-eb-VvS"/>
-                                <include reference="B8a-BP-emA"/>
+                                <include reference="Uj1-15-eQd"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="personTable" destination="GUN-jB-xU7" id="ur0-UD-KnT"/>
+                        <outlet property="toScreen1Button" destination="jVF-GD-Gzr" id="eQ3-IW-xIs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xff-Gn-YmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qra-1a-u1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="480" y="515"/>
         </scene>
