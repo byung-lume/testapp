@@ -45,7 +45,6 @@
         array = array1;
     }];
     NSArray *paths = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:[array count]-1 inSection:1]];
-    [[self personTable] insertRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationTop];
     [self.personTable insertRowsAtIndexPaths:array  withRowAnimation:UITableViewRowAnimationTop];
     [self.personTable endUpdates];
     NSLog(@"Table Populated!");

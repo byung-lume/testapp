@@ -1,0 +1,16 @@
+
+*.pbxproj
+
+*.pbxproj
+
+byungtestapp.xcodeproj/project.pbxproj
+
+*.xccheckout
+
+*.xcuserstate
+
+*.xcbkptlist
+
+byungtestapp.xcodeproj/project.xcworkspace/xcuserdata/interns.xcuserdatad/UserInterfaceState.xcuserstate
+
+byungtestapp.xcodeproj/xcuserdata/interns.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
